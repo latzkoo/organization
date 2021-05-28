@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Organization</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="logo">SZTE TTIK Logo</string>
+    <string name="wrongEmailOrPassword">Wrong e-mail address or password!</string>
+    <string name="addNew">Add new</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="identifier">Identifier</string>
+    <string name="newHospitalDepartment">Add new hospital department</string>
+    <string name="updatePassword">Update Password</string>
+    <string name="passwordConfirmation">Password confirmation</string>
+    <string name="newPasswordConfirmation">New password confirmation</string>
+    <string name="newPassword">New password</string>
+    <string name="passwordUpdatedSuccessfully">Your password successfully updated</string>
+    <string name="hospitalDepartments">Hospital Departments</string>
+    <string name="passwordsNotMatch">The password confirmation does not match!</string>
+    <string name="passwordMinLength">Password should be at least 6 characters!</string>
+    <string name="register">Register</string>
+    <string name="createAccount">Create Account</string>
+    <string name="name">Name</string>
+    <string name="alias">Alias</string>
+    <string name="endpoint">Endpoint</string>
+    <string name="address">Address</string>
+    <string name="active">Active</string>
+</resources>

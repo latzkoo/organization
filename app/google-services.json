@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1052447365113",
+    "project_id": "organization-35c23",
+    "storage_bucket": "organization-35c23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052447365113:android:a18ed5a27649681e4c0f28",
+        "android_client_info": {
+          "package_name": "hu.latzkoo.organization"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052447365113-g3imh0gns1p9lg2rbdrh4nhqvsvkstva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hu.latzkoo.organization",
+            "certificate_hash": "17cb1aaf497b3915f18ad447a6682e980d284fce"
+          }
+        },
+        {
+          "client_id": "1052447365113-a943bom0c45d1db2u9v7i40rgop1r7jr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVg8L0EHTete5QY10PTf1ZmokNFomdRa8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052447365113-a943bom0c45d1db2u9v7i40rgop1r7jr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
