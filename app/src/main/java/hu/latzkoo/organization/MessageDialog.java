@@ -13,9 +13,7 @@ public class MessageDialog extends AppCompatDialogFragment {
 
         builder.setTitle("Information")
                 .setMessage(R.string.passwordUpdatedSuccessfully)
-                .setPositiveButton("OK", (dialog, which) -> {
-
-                });
+                .setPositiveButton("OK", (dialog, which) -> {});
 
         return builder.create();
     }

@@ -15,9 +15,11 @@
                 android:theme="@style/OrganizationTheme.NoActionBar.FullScreen" />
         <activity
                 android:name=".SettingActivity"
+                android:parentActivityName=".MainActivity"
                 android:label="@string/settings" />
         <activity
                 android:name=".FormActivity"
+                android:parentActivityName=".MainActivity"
                 android:label="@string/hospitalDepartments" />
         <activity
                 android:name=".LoginActivity"
@@ -33,6 +35,7 @@
         </activity>
         <activity
                 android:name=".MainActivity"
+                android:launchMode="singleTop"
                 android:label="@string/hospitalDepartments" />
     </application>
 

@@ -1,115 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mainScroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".FormActivity"
-        android:padding="@dimen/padding"
-        android:background="#FFFFFF">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
 
-    <TextView
-            android:id="@+id/loginTextView"
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/newHospitalDepartment"
-            android:textColor="@color/dark"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:fontFamily="sans-serif-black"
-            android:textSize="20sp"
-            android:textAllCaps="true"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="@dimen/padding"/>
+            tools:context=".FormActivity"
+            android:padding="@dimen/padding"
+            android:scrollbars="vertical"
+            android:background="#FFFFFF">
 
-    <EditText
-            android:id="@+id/identifierEditText"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="@string/identifier"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="5dp"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
+        <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/newHospitalDepartment"
+                android:textColor="@color/dark"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="@dimen/padding" />
 
-    <EditText
-            android:id="@+id/nameEditText"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="@string/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="5dp"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/identifierEditText" />
+        <EditText
+                android:id="@+id/identifierEditText"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/identifier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
-    <EditText
-            android:id="@+id/aliasEditText"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="@string/alias"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="5dp"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+        <EditText
+                android:id="@+id/nameEditText"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/identifierEditText" />
 
-    <EditText
-            android:id="@+id/addressEditText"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="@string/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="5dp"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/aliasEditText" />
+        <EditText
+                android:id="@+id/aliasEditText"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/alias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
-    <EditText
-            android:id="@+id/itemEndpointEditText"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="@string/endpoint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="5dp"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/addressEditText" />
+        <EditText
+                android:id="@+id/addressEditText"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/aliasEditText" />
 
-    <Switch
-            android:text="@string/active"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/activeSwitch"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/itemEndpointEditText"
-            app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+                android:id="@+id/contactEditText"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/addressEditText" />
 
-    <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/save"
-            tools:layout_editor_absoluteX="@dimen/padding"
-            android:backgroundTint="@color/blue"
-            android:height="@dimen/marginDouble"
-            android:onClick="saveOrganization"
-            android:textColor="@color/white"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="@dimen/marginDouble"
-            app:layout_constraintTop_toBottomOf="@+id/activeSwitch" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+                android:id="@+id/telecomEditText"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/telecom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/contactEditText" />
+
+        <EditText
+                android:id="@+id/endpointEditText"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/endpoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="5dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/telecomEditText" />
+
+        <Switch
+                android:text="@string/active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activeSwitch"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/endpointEditText"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/buttonHeight"
+                android:text="@string/add"
+                tools:layout_editor_absoluteX="16dp"
+                android:backgroundTint="@color/blue"
+                android:onClick="saveOrganization"
+                android:textColor="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="@dimen/marginDouble"
+                app:layout_constraintTop_toBottomOf="@+id/activeSwitch" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

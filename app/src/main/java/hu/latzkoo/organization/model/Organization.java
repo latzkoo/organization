@@ -1,7 +1,9 @@
 package hu.latzkoo.organization.model;
 
-import java.util.HashMap;
-
+//@Getter
+//@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Organization {
 
     private int identifier;
@@ -12,14 +14,14 @@ public class Organization {
     private String telecom;
     private String address;
     private Organization partOf;
-    private HashMap<String, String> contact;
+    private String contact;
     private String endpoint;
 
     public Organization() {
     }
 
     public Organization(int identifier, boolean active, String type, String name, String alias, String telecom,
-                        String address, Organization partOf, HashMap<String, String> contact, String endpoint) {
+                        String address, Organization partOf, String contact, String endpoint) {
         this.identifier = identifier;
         this.active = active;
         this.type = type;
@@ -96,11 +98,11 @@ public class Organization {
         this.partOf = partOf;
     }
 
-    public HashMap<String, String> getContact() {
+    public String getContact() {
         return contact;
     }
 
-    public void setContact(HashMap<String, String> contact) {
+    public void setContact(String contact) {
         this.contact = contact;
     }
 

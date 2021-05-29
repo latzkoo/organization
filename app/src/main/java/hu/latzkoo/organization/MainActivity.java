@@ -3,27 +3,30 @@ package hu.latzkoo.organization;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-import java.util.ArrayList;
-
 import hu.latzkoo.organization.model.Organization;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OrganizationAdapter.OnItemClickListener {
     private static final int SECRET_KEY = 912;
 
     private FirebaseUser user;
@@ -54,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
-        findAll();
+        initList();
     }
 
-    private void findAll() {
+    private void initList() {
         Query query = departmentsRef.orderBy("name", Query.Direction.ASCENDING);
 
         FirestoreRecyclerOptions<Organization> options = new FirestoreRecyclerOptions.Builder<Organization>()
@@ -70,6 +73,27 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView,
+                                  @NonNull RecyclerView.ViewHolder viewHolder,
+                                  @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                adapter.deleteItem(viewHolder.getLayoutPosition());
+            }
+        }).attachToRecyclerView(recyclerView);
+
+        adapter.setOnItemClickListener((documentSnapshot, position) -> {
+            Organization organization = documentSnapshot.toObject(Organization.class);
+            if (organization != null) {
+                showOrganization(organization);
+            }
+        });
     }
 
     @Override
@@ -117,5 +141,28 @@ public class MainActivity extends AppCompatActivity {
     public void createDepartment(View view) {
         Intent intent = new Intent(this, FormActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+
+    }
+
+    void showOrganization(Organization organization) {
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_ACTION_BAR);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.organization_details);
+
+        int width = (int)(getResources().getDisplayMetrics().widthPixels * 0.90);
+        dialog.getWindow().setLayout(width, dialog.getWindow().getAttributes().height);
+
+        TextView organizationNameTextView = dialog.findViewById(R.id.organizationNameTextView);
+        TextView organizationAddressTextView = dialog.findViewById(R.id.organizationAddressTextView);
+
+        organizationNameTextView.setText(organization.getName());
+        organizationAddressTextView.setText(organization.getAddress());
+
+        dialog.show();
     }
 }
