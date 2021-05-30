@@ -10,7 +10,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -101,6 +100,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 loaderRegister.setVisibility(View.GONE);
 
                                 if (userTask.isSuccessful()) {
+                                    SharedPreference.setLoggedIn(getApplicationContext(), true);
+
                                     Intent intent = new Intent(this, MainActivity.class);
                                     intent.putExtra("SECRET_KEY", SECRET_KEY);
 

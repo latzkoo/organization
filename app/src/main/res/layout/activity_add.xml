@@ -56,7 +56,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="5dp"
                 app:layout_constraintVertical_bias="0.0"
-                android:layout_marginTop="@dimen/marginDouble"
+                android:layout_marginTop="@dimen/margin"
                 app:layout_constraintTop_toBottomOf="@+id/identifierEditText" />
 
         <EditText
@@ -69,7 +69,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="5dp"
                 app:layout_constraintVertical_bias="0.0"
-                android:layout_marginTop="@dimen/marginDouble"
+                android:layout_marginTop="@dimen/margin"
                 app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
         <EditText
@@ -82,7 +82,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="5dp"
                 app:layout_constraintVertical_bias="0.0"
-                android:layout_marginTop="@dimen/marginDouble"
+                android:layout_marginTop="@dimen/margin"
                 app:layout_constraintTop_toBottomOf="@+id/aliasEditText" />
 
         <EditText
@@ -95,21 +95,21 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="5dp"
                 app:layout_constraintVertical_bias="0.0"
-                android:layout_marginTop="@dimen/marginDouble"
+                android:layout_marginTop="@dimen/margin"
                 app:layout_constraintTop_toBottomOf="@+id/addressEditText" />
 
 
         <EditText
                 android:id="@+id/telecomEditText"
                 android:ems="10"
-                android:inputType="text"
+                android:inputType="phone"
                 android:hint="@string/telecom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="5dp"
                 app:layout_constraintVertical_bias="0.0"
-                android:layout_marginTop="@dimen/marginDouble"
+                android:layout_marginTop="@dimen/margin"
                 app:layout_constraintTop_toBottomOf="@+id/contactEditText" />
 
         <EditText
@@ -122,17 +122,52 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="5dp"
                 app:layout_constraintVertical_bias="0.0"
-                android:layout_marginTop="@dimen/marginDouble"
+                android:layout_marginTop="@dimen/margin"
                 app:layout_constraintTop_toBottomOf="@+id/telecomEditText" />
 
-        <Switch
-                android:text="@string/active"
-                android:layout_width="wrap_content"
+
+        <RelativeLayout
+                android:id="@+id/statusRow"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/activeSwitch"
-                android:layout_marginTop="@dimen/marginDouble"
-                app:layout_constraintTop_toBottomOf="@+id/endpointEditText"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginTop="@dimen/padding"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingTop="@dimen/paddingHalf"
+                android:paddingBottom="@dimen/paddingHalf"
+                app:layout_constraintTop_toBottomOf="@+id/endpointEditText">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    tools:ignore="UselessParent">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                    <Spinner
+                            android:id="@+id/typeSpinner"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                    <Switch
+                            android:text="@string/active"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/activeSwitch"
+                            android:paddingLeft="@dimen/padding"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
 
         <Button
                 android:id="@+id/saveBtn"
@@ -141,11 +176,11 @@
                 android:text="@string/add"
                 tools:layout_editor_absoluteX="16dp"
                 android:backgroundTint="@color/blue"
-                android:onClick="saveOrganization"
+                android:onClick="addOrganization"
                 android:textColor="@color/white"
                 android:clickable="true"
                 android:focusable="true"
-                android:layout_marginTop="@dimen/marginDouble"
-                app:layout_constraintTop_toBottomOf="@+id/activeSwitch" />
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintTop_toBottomOf="@+id/statusRow" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

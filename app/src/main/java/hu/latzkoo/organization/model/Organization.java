@@ -1,9 +1,5 @@
 package hu.latzkoo.organization.model;
 
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class Organization {
 
     private int identifier;
@@ -13,7 +9,6 @@ public class Organization {
     private String alias;
     private String telecom;
     private String address;
-    private Organization partOf;
     private String contact;
     private String endpoint;
 
@@ -21,7 +16,7 @@ public class Organization {
     }
 
     public Organization(int identifier, boolean active, String type, String name, String alias, String telecom,
-                        String address, Organization partOf, String contact, String endpoint) {
+                        String address, String contact, String endpoint) {
         this.identifier = identifier;
         this.active = active;
         this.type = type;
@@ -29,7 +24,6 @@ public class Organization {
         this.alias = alias;
         this.telecom = telecom;
         this.address = address;
-        this.partOf = partOf;
         this.contact = contact;
         this.endpoint = endpoint;
     }
@@ -88,14 +82,6 @@ public class Organization {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Organization getPartOf() {
-        return partOf;
-    }
-
-    public void setPartOf(Organization partOf) {
-        this.partOf = partOf;
     }
 
     public String getContact() {

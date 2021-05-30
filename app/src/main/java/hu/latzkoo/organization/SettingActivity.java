@@ -1,6 +1,5 @@
 package hu.latzkoo.organization;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;

@@ -4,4 +4,5 @@
     <dimen name="padding">16dp</dimen>
     <dimen name="paddingHalf">8dp</dimen>
     <dimen name="buttonHeight">64dp</dimen>
+    <dimen name="margin">16dp</dimen>
 </resources>

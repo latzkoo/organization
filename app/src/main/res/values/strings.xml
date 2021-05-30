@@ -25,7 +25,6 @@
     <string name="alias">Alias</string>
     <string name="endpoint">Endpoint</string>
     <string name="address">Address</string>
-    <string name="active">Active</string>
     <string name="details">Details</string>
     <string name="notFilled">-</string>
     <string name="notificationNewAdded">New department has been added</string>
@@ -33,4 +32,18 @@
     <string name="add">Add</string>
     <string name="contact">Contact</string>
     <string name="telecom">Telecom</string>
+    <string name="status">Status</string>
+    <string name="inactive">Inactive</string>
+    <string name="active">Active</string>
+    <string name="type">Type</string>
+    <string name="fhirProject">FHIR Organization</string>
+    <string name="edit">Edit</string>
+    <string name="editHospitalDepartment">Edit hospital department</string>
+    <string name="cancel">Cancel</string>
+    <string name="departmentUpdated">Department has been updated</string>
+
+    <string-array name="departmentTypes">
+        <item>Hospital</item>
+        <item>Clinic</item>
+    </string-array>
 </resources>

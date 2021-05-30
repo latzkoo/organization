@@ -30,6 +30,7 @@ public class OrganizationAdapter extends FirestoreRecyclerAdapter<Organization, 
                                     int position, @NonNull Organization model) {
         holder.nameTextView.setText(model.getName());
         holder.addressTextView.setText(model.getAddress());
+        holder.identifierTextView.setText("ID: " + model.getIdentifier());
     }
 
     @NonNull
@@ -38,7 +39,7 @@ public class OrganizationAdapter extends FirestoreRecyclerAdapter<Organization, 
         this.context = parent.getContext();
         notificationHandler = new NotificationHandler(context);
 
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.organization_item, parent, false);
         return new OrganizationHolder(view);
     }
 
@@ -52,12 +53,14 @@ public class OrganizationAdapter extends FirestoreRecyclerAdapter<Organization, 
     class OrganizationHolder extends RecyclerView.ViewHolder {
         private TextView nameTextView;
         private TextView addressTextView;
+        private TextView identifierTextView;
 
         public OrganizationHolder(View itemView) {
             super(itemView);
 
             nameTextView = itemView.findViewById(R.id.itemNameTextView);
             addressTextView = itemView.findViewById(R.id.itemAddressTextView);
+            identifierTextView = itemView.findViewById(R.id.itemIdentifierTextView);
 
             itemView.setOnClickListener(v -> {
                 int position = getLayoutPosition();

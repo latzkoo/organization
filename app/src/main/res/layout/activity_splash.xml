@@ -17,7 +17,7 @@
             android:alpha="0.3"
             android:paddingLeft="60dp"
             tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="16dp" />
 
     <ImageView
             android:id="@+id/logo"
@@ -34,7 +34,7 @@
             app:layout_constraintVertical_bias="0.499" />
 
     <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top|center"
@@ -47,5 +47,17 @@
             app:layout_constraintTop_toBottomOf="@+id/logo"
             tools:layout_editor_absoluteX="15dp"
             android:layout_marginTop="@dimen/padding" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/dark"
+            android:text="@string/fhirProject"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

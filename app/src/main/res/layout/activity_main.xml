@@ -5,15 +5,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:background="@color/lightgray"
-        android:paddingTop="@dimen/paddingHalf"
-        android:paddingBottom="@dimen/paddingHalf">
+        android:background="@color/lightgray">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/margin"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addNew"

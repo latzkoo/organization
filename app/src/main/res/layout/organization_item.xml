@@ -2,8 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/paddingHalf"
-        android:layout_marginBottom="@dimen/paddingHalf"
+        android:layout_marginTop="@dimen/padding"
         android:layout_marginLeft="@dimen/padding"
         android:layout_marginRight="@dimen/padding"
         android:foreground="?android:attr/selectableItemBackground"
@@ -24,12 +23,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/dark"
                     android:textSize="18sp" />
             <TextView
                     android:id="@+id/itemAddressTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp" />
+            <TextView
+                    android:id="@+id/itemIdentifierTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp" />
         </LinearLayout>
 
     </RelativeLayout>

@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.google.firebase.firestore.CollectionReference;
@@ -24,6 +26,7 @@ public class FormActivity extends AppCompatActivity {
     private EditText contactEditText;
     private EditText telecomEditText;
     private EditText endpointEditText;
+    private Spinner typeSpinner;
     private Switch activeSwitch;
     private Button saveBtn;
 
@@ -32,7 +35,7 @@ public class FormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form);
+        setContentView(R.layout.activity_add);
 
         identifierEditText = findViewById(R.id.identifierEditText);
         nameEditText = findViewById(R.id.nameEditText);
@@ -42,12 +45,18 @@ public class FormActivity extends AppCompatActivity {
         contactEditText = findViewById(R.id.contactEditText);
         telecomEditText = findViewById(R.id.telecomEditText);
         activeSwitch = findViewById(R.id.activeSwitch);
+        typeSpinner = findViewById(R.id.typeSpinner);
         saveBtn = findViewById(R.id.saveBtn);
 
         notificationHandler = new NotificationHandler(this);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.departmentTypes, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeSpinner.setAdapter(adapter);
     }
 
-    public void saveOrganization(View view) {
+    public void addOrganization(View view) {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
         saveBtn.startAnimation(animation);
 
@@ -75,6 +84,7 @@ public class FormActivity extends AppCompatActivity {
         String contact = contactEditText.getText().toString();
         String telecom = telecomEditText.getText().toString();
         String endpoint = endpointEditText.getText().toString();
+        String type = typeSpinner.getSelectedItem().toString();
         boolean active = activeSwitch.isChecked();
 
         CollectionReference organizationRef = FirebaseFirestore.getInstance().collection("organizations");
@@ -87,6 +97,7 @@ public class FormActivity extends AppCompatActivity {
         organization.setContact(contact);
         organization.setTelecom(telecom);
         organization.setEndpoint(endpoint);
+        organization.setType(type);
         organization.setActive(active);
 
         organizationRef.add(organization);
@@ -94,4 +105,5 @@ public class FormActivity extends AppCompatActivity {
 
         finish();
     }
+
 }

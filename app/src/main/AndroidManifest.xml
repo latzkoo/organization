@@ -10,17 +10,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Organization">
+        <activity android:name=".TestActivity"></activity>
         <activity
                 android:name=".RegisterActivity"
                 android:theme="@style/OrganizationTheme.NoActionBar.FullScreen" />
         <activity
                 android:name=".SettingActivity"
-                android:parentActivityName=".MainActivity"
-                android:label="@string/settings" />
+                android:label="@string/settings"
+                android:parentActivityName=".MainActivity" />
         <activity
                 android:name=".FormActivity"
-                android:parentActivityName=".MainActivity"
-                android:label="@string/hospitalDepartments" />
+                android:label="@string/hospitalDepartments"
+                android:parentActivityName=".MainActivity" />
         <activity
                 android:name=".LoginActivity"
                 android:theme="@style/OrganizationTheme.NoActionBar.FullScreen" />
@@ -35,8 +36,8 @@
         </activity>
         <activity
                 android:name=".MainActivity"
-                android:launchMode="singleTop"
-                android:label="@string/hospitalDepartments" />
+                android:label="@string/hospitalDepartments"
+                android:launchMode="singleTop" />
     </application>
 
 </manifest>
